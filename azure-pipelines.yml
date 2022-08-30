@@ -27,13 +27,14 @@ stages:
             TargetFolder: $(Build.ArtifactStagingDirectory)
         - upload: $(Build.ArtifactStagingDirectory)
           artifact: drop
-
   - stage: Deploy
     jobs:  
     - deployment: VMDeploy
       displayName: web
+      pool:
+        vmImage: 'ubuntu-latest'
       environment:
-        name:  vm
+        name: vm
         resourceType: VirtualMachine
         tags: web
       strategy:
