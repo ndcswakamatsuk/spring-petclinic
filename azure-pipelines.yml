@@ -39,8 +39,4 @@ stages:
        runOnce:
         deploy:
           steps:
-          - task: DownloadPipelineArtifact@1
-            inputs:
-              buildType: current
-              targetPath: "$(Build.ArtifactStagingDirectory)"
           - script: echo my first deployment
