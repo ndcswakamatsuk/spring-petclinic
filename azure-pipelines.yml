@@ -39,4 +39,6 @@ stages:
        runOnce:
         deploy:
           steps:
+          - download: current
+            artifact: drop
           - script: echo my first deployment
